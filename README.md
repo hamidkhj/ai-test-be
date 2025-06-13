@@ -69,7 +69,7 @@ npm run dev
 
 Swagger UI is available at:
 
-👉 **[https://qa-test-backend.onrender.com/api/docs](https://qa-test-backend.onrender.com/api/docs)**
+👉 **[https://ai-test-be.onrender.com/api/docs](https://ai-test-be.onrender.com/api/docs)**
 
 ---
 
@@ -102,10 +102,12 @@ npm install cypress --save-dev
 ## Running tests
 
 API Tests with Newman
-This project includes Postman-based end-to-end API tests using Newman.
+
+- This project includes Postman-based end-to-end API tests using Newman.
 
 Prerequisites
-Ensure the backend server is running locally on http://localhost:8000.
+
+- Ensure the backend server is running locally on http://localhost:8000.
 
 Run Tests
 
@@ -115,6 +117,6 @@ npm test
 
 This will:
 
-Run the happy-path.postman_collection.json
-Use the postman_environment.json
-Output results to the terminal (CLI)
+- Run the happy-path.postman_collection.json
+- Use the postman_environment.json
+- Output results to the terminal (CLI)
