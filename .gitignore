@@ -1,0 +1,4 @@
+# my added files
+/node_modules
+.env
+.vercel
