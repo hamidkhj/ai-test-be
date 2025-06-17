@@ -8,6 +8,7 @@ import swaggerSpec from "./swagger/swaggerConfig.js";
 import userRouter from "./routes/userRoute.js"
 import shiftRouter from "./routes/shiftRoute.js"
 import forgotPasswordRouter from "./routes/forgotPassword.js"
+import chatbotRouter from './routes/chatbotRoute.js'
 
 //app config
 dotenv.config()
@@ -34,6 +35,7 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use("/api/user", userRouter)
 app.use("/api/shift", shiftRouter)
 app.use("/api/forgotPassword", forgotPasswordRouter)
+app.use("/api/chatbot", chatbotRouter)
 // Swagger Docs
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
