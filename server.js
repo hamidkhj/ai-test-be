@@ -10,6 +10,8 @@ import shiftRouter from "./routes/shiftRoute.js"
 import forgotPasswordRouter from "./routes/forgotPassword.js"
 import chatbotRouter from './routes/chatbotRoute.js'
 
+import { initializeFAQData } from "./controllers/chatBotController.js";
+
 //app config
 dotenv.config()
 const app = express()
@@ -40,4 +42,8 @@ app.use("/api/chatbot", chatbotRouter)
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 //listen
-app.listen(port, () => console.log(`Listening on localhost:${port}`))
+
+initializeFAQData().then(() => { //initialize the embedding once before starting the server
+    console.log("FAQ data initialized and ready for use.");
+    app.listen(port, () => console.log(`Listening on localhost:${port}`))
+});
