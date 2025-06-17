@@ -1,5 +1,5 @@
 import express from 'express';
-import { testChatBot } from '../controllers/chatBotController.js';
+import { chatWithTogather } from '../controllers/chatBotController.js';
 
 
 const router = express.Router();
@@ -15,6 +15,6 @@ const router = express.Router();
  *       401:
  *         description: LLM failed
  */
-router.post('/chat', testChatBot) 
+router.post('/chat', chatWithTogather) 
 
 export default router;
