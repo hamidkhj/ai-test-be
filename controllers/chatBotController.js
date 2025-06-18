@@ -137,9 +137,8 @@ const chatWithTogather = async (req, res) => {
         apiKey: process.env.TOGETHER_API_KEY
     });
 
-    const { message, history } = req.body;
+    const { message, _ } = req.body;
     console.log("User message received:", message);
-    console.log("Chat history received:", history);
 
     try {
         const queryEmbeddings = await getEmbeddings([message], 'search_query');

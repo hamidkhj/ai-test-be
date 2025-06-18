@@ -9,6 +9,7 @@ import userRouter from "./routes/userRoute.js"
 import shiftRouter from "./routes/shiftRoute.js"
 import forgotPasswordRouter from "./routes/forgotPassword.js"
 import chatbotRouter from './routes/chatbotRoute.js'
+import documentRouter from './routes/documentRoute.js'
 
 import { initializeFAQData } from "./controllers/chatBotController.js";
 
@@ -38,6 +39,7 @@ app.use("/api/user", userRouter)
 app.use("/api/shift", shiftRouter)
 app.use("/api/forgotPassword", forgotPasswordRouter)
 app.use("/api/chatbot", chatbotRouter)
+app.use("/api/processDocs", documentRouter)
 // Swagger Docs
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
