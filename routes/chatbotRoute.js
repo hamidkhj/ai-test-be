@@ -1,6 +1,7 @@
 import express from 'express';
 import { chatWithTogather } from '../controllers/chatBotController.js';
 import requireAuth from "../middleware/requireAuth.js";
+import chatRateLimiter from '../middleware/rateLimiter.js';
 
 const router = express.Router();
 
@@ -55,6 +56,6 @@ const router = express.Router();
  *                  description: A descriptive error message.
  *                  example: "An error occurred while processing your request. Failed to generate embedding for the user's query."
  */
-router.post('/chat', requireAuth, chatWithTogather)
+router.post('/chat', requireAuth, chatRateLimiter, chatWithTogather)
 
 export default router;
