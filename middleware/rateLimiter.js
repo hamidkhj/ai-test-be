@@ -1,8 +1,13 @@
 import Redis from 'ioredis';
 import { RateLimiterRedis } from 'rate-limiter-flexible';
+import dotenv from "dotenv";
+
+dotenv.config()
+
 
 const redisClient = new Redis({
     enableOfflineQueue: false, // Prevents commands from being queued while offline
+    url: process.env.REDIS_URL
 });
 
 const rateLimiter = new RateLimiterRedis({
