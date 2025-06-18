@@ -7,7 +7,7 @@ dotenv.config()
 
 const redisClient = new Redis({
     enableOfflineQueue: false, // Prevents commands from being queued while offline
-    url: process.env.REDIS_URL
+    url: process.env.REDIS_LOCAL_URL
 });
 
 const rateLimiter = new RateLimiterRedis({
