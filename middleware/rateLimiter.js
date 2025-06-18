@@ -8,7 +8,7 @@ const redisClient = new Redis({
 const rateLimiter = new RateLimiterRedis({
     storeClient: redisClient,
     keyPrefix: 'chat_rate_limit', // Prefix for keys in Redis
-    points: 1, // n requestss
+    points: 2, // n requestss
     duration: 60, // per 60 seconds (1 minute)
     blockDuration: 60 * 1, // Block for 1 minutes if limit is exceeded
 });
