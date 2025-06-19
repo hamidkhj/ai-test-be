@@ -45,7 +45,6 @@ const initializeFAQData = async () => {
                 
                 faqIndex = new faiss.IndexFlatIP(embeddingDimension);
                 
-                const embeddingMatrix = [];
                 for (const embedding of faqEmbeddings) {
                     faqIndex.add(embedding)
                 }

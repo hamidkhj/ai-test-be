@@ -6,6 +6,8 @@ This is the backend system for the **Shift Manager** application, built with **N
 - 🔐 Protected routes for shift management
 - 🔁 Password reset via email with secure token flow
 - 📄 Auto-generated API docs using Swagger (OpenAPI 3.0)
+- AI powered chatbot
+- AI powered document validation and information extraction
 
 ---
 
@@ -47,10 +49,27 @@ npm install
 Create a `.env` file in the root with the following variables:
 
 ```env
-MONGO_URI=<your-mongodb-connection-uri>
-PORT=8000
+APP_ENVIRONMENT=development
+
+COHERE_API_KEY=<Your-API-KEY>
+
 JWT_SECRET=secret1234
+
+MONGO_URI=<Mongo-URI>
+
+PORT=8000
+
 NODE_ENV=development
+
+TOGETHER_API_KEY = <Your-API-Key>
+
+GOOGLE_APPLICATION_CREDENTIALS=<Google-Secret-File-Name>
+
+REDIS_URL=<Redis-Url>
+
+GC_DOC_PATH=<Path-to-Google-Secret-File>
+
+OCR_ENDPOINT=<Endpoint-For-Google-Document-Process>
 ```
 
 ---
@@ -69,7 +88,8 @@ npm run dev
 
 Swagger UI is available at:
 
-👉 **[https://ai-test-be.onrender.com/api/docs](https://ai-test-be.onrender.com/api/docs)**
+👉 **[https://ai-test-be.onrender.com/api/docs](https://ortabe.onrender.com/api/docs)**
+note: This is using Render free services. The app will hybernate after 15 minutes of not being used and it takes 1-2 minutes to reload.
 
 ---
 
